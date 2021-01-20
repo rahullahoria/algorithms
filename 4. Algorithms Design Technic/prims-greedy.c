@@ -10,8 +10,7 @@
 // A utility function to find the vertex with 
 // minimum key value, from the set of vertices 
 // not yet included in MST 
-int minKey(int key[], bool mstSet[]) 
-{ 
+int minKey(int key[], bool mstSet[]) { 
 	// Initialize min value 
 	int min = INT_MAX, min_index; 
 
@@ -24,8 +23,7 @@ int minKey(int key[], bool mstSet[])
 
 // A utility function to print the 
 // constructed MST stored in parent[] 
-int printMST(int parent[], int graph[V][V]) 
-{ 
+int printMST(int parent[], int graph[V][V]) { 
 	printf("Edge \tWeight\n"); 
 	for (int i = 1; i < V; i++) 
 		printf("%d - %d \t%d \n", parent[i], i, graph[i][parent[i]]); 
@@ -34,8 +32,7 @@ int printMST(int parent[], int graph[V][V])
 // Function to construct and print MST for 
 // a graph represented using adjacency 
 // matrix representation 
-void primMST(int graph[V][V]) 
-{ 
+void primMST(int graph[V][V]) { 
 	// Array to store constructed MST 
 	int parent[V]; 
 	// Key values used to pick minimum weight edge in cut 

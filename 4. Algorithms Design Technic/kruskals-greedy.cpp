@@ -43,8 +43,7 @@ struct subset {
 
 // A utility function to find set of an element i
 // (uses path compression technique)
-int find(struct subset subsets[], int i)
-{
+int find(struct subset subsets[], int i){
 	// find root and make root as parent of i
 	// (path compression)
 	if (subsets[i].parent != i)
@@ -56,8 +55,7 @@ int find(struct subset subsets[], int i)
 
 // A function that does union of two sets of x and y
 // (uses union by rank)
-void Union(struct subset subsets[], int x, int y)
-{
+void Union(struct subset subsets[], int x, int y){
 	int xroot = find(subsets, x);
 	int yroot = find(subsets, y);
 
@@ -88,11 +86,10 @@ int myComp(const void* a, const void* b)
 
 // The main function to construct MST using Kruskal's
 // algorithm
-void KruskalMST(struct Graph* graph)
-{
+void KruskalMST(struct Graph* graph){
 	int V = graph->V;
 	struct Edge
-		result[V]; // Tnis will store the resultant MST
+		result[V]; // This will store the resultant MST
 	int e = 0; // An index variable, used for result[]
 	int i = 0; // An index variable, used for sorted edges
 
@@ -137,8 +134,7 @@ void KruskalMST(struct Graph* graph)
 	printf(
 		"Following are the edges in the constructed MST\n");
 	int minimumCost = 0;
-	for (i = 0; i < e; ++i)
-	{
+	for (i = 0; i < e; ++i){
 		printf("%d -- %d == %d\n", result[i].src,
 			result[i].dest, result[i].weight);
 		minimumCost += result[i].weight;
@@ -148,8 +144,7 @@ void KruskalMST(struct Graph* graph)
 }
 
 // Driver program to test above functions
-int main()
-{
+int main(){
 	/* Let us create following weighted graph
 			10
 		0--------1

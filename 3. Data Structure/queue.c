@@ -4,7 +4,7 @@
 #define SIZE 5
 
 void enQueue(int);
-void deQueue();
+int deQueue();
 void display();
 
 int items[SIZE], front = -1, rear = -1;
@@ -46,14 +46,16 @@ void enQueue(int value) {
   }
 }
 
-void deQueue() {
+int deQueue() {
   if (front == -1)
     printf("\nQueue is Empty!!");
   else {
     printf("\nDeleted : %d", items[front]);
+    int ele = items[front];
     front++;
     if (front > rear)
       front = rear = -1;
+    return ele;
   }
 }
 

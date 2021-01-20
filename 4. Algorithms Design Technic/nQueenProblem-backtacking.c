@@ -5,8 +5,7 @@ backtracking */
 #include <stdio.h> 
 
 /* A utility function to print solution */
-void printSolution(int board[N][N]) 
-{ 
+void printSolution(int board[N][N]) { 
 	for (int i = 0; i < N; i++) { 
 		for (int j = 0; j < N; j++) 
 			printf(" %d ", board[i][j]); 
@@ -20,8 +19,7 @@ function is called when "col" queens are
 already placed in columns from 0 to col -1. 
 So we need to check only left side for 
 attacking queens */
-bool isSafe(int board[N][N], int row, int col) 
-{ 
+bool isSafe(int board[N][N], int row, int col) { 
 	int i, j; 
 
 	/* Check this row on left side */
@@ -44,8 +42,7 @@ bool isSafe(int board[N][N], int row, int col)
 
 /* A recursive utility function to solve N 
 Queen problem */
-bool solveNQUtil(int board[N][N], int col) 
-{ 
+bool solveNQUtil(int board[N][N], int col) { 
 	/* base case: If all queens are placed 
 	then return true */
 	if (col >= N) 
@@ -84,8 +81,7 @@ prints placement of queens in the form of 1s.
 Please note that there may be more than one 
 solutions, this function prints one of the 
 feasible solutions.*/
-bool solveNQ() 
-{ 
+bool solveNQ() { 
 	int board[N][N] = { { 0, 0, 0, 0 }, 
 						{ 0, 0, 0, 0 }, 
 						{ 0, 0, 0, 0 }, 
@@ -101,8 +97,7 @@ bool solveNQ()
 } 
 
 // driver program to test above function 
-int main() 
-{ 
+int main() { 
 	solveNQ(); 
 	return 0; 
 } 
